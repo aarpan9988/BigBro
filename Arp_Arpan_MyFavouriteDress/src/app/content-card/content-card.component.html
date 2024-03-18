@@ -1,0 +1,12 @@
+<div>
+    <!-- Display item details here -->
+    <p>{{ item.title }}</p>
+    <p>{{ item.description }}</p>
+    <p>Creator: {{ item.creator }}</p>
+    <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
+    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold','border':'2px solid black' }">Tags :{{ item.tags }}</p>
+    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
+    <ng-template #defaultImage>
+      <img [src]="defaultImageUrl" alt="Default Image" />
+    </ng-template>
+</div>

@@ -25,4 +25,9 @@ export class DressService {
       map(contentArray => contentArray.find(content => content.id === id))
     );
   }
-}
+
+  getSingleContentById(id: number): Observable<any> {
+    return this.getContent().pipe(
+      map(contentArray => contentArray.find(content => content.id === id))
+    );
+}}

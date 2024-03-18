@@ -9,7 +9,7 @@ import { DressService } from '../dress.service';
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent {
-
+  contentItem: Content;
   name : string | undefined;
    contentArray: Content[] = [];
    logContentInfo(id: string, title: string) {
@@ -114,14 +114,12 @@ export class ContentListComponent {
     ngOnInit(){
         console.log("service")
   
-        this.service.getContent().subscribe(res=>{
+        this.service.getContent().subscribe((res: any)=>{
           console.log(res)
           this.contentArray.push(...res)
         })
 
-        this.service.getContentById(2).subscribe(res=>{
-          console.log(res)
-        })
+       
       
     }
     

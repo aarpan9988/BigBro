@@ -6,52 +6,27 @@
   <h3 *ngIf="!typePresent && typePresent!=undefined" style="color: red;"> Title is not present in the list.</h3>
 </div>
 
+<app-content-card [item]="contentItem"></app-content-card>
+
 <h2>Items with no type :</h2>
 <div class="card-container">
+
+  
  
-<div *ngFor="let item of contentArray | contentTypeFilter">
-<!-- Display no type item details here -->
-<p>{{ item.title }}</p>
-<p>{{ item.description }}</p>
-<p>Creator: {{ item.creator }}</p>
-<p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold','border':'2px solid black' }">Tags :{{ item.tags }}</p>
-<img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
-    <ng-template #defaultImage>
-      <img [src]="defaultImageUrl" alt="Default Image" />
-    </ng-template>
-</div>
-</div>
+<app-content-card *ngFor="let item of contentArray | contentTypeFilter" [item]="item">
+</app-content-card>
+
 <h2>Items with type 'Indian':</h2>
 <div class="card-container">
   
-  <div *ngFor="let item of contentArray | contentTypeFilter:'Indian'">
-    <!-- Display item details here -->
-    <p>{{ item.title }}</p>
-    <p>{{ item.description }}</p>
-    <p>Creator: {{ item.creator }}</p>
-    <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
-    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold','border':'2px solid black' }">Tags :{{ item.tags }}</p>
-    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
-    <ng-template #defaultImage>
-      <img [src]="defaultImageUrl" alt="Default Image" />
-    </ng-template>
-  </div>
+  <app-content-card *ngFor="let item of contentArray | contentTypeFilter:'Indian'" [item]="item">
+  </app-content-card>
 </div>
 
 <h2>Items with type 'Casual':</h2>
 <div class="card-container">
    
-  <div *ngFor="let item of contentArray | contentTypeFilter:'Casual'">
-    <!-- Display item details here -->
-    <p>{{ item.title }}</p>
-    <p>{{ item.description }}</p>
-    <p>Creator: {{ item.creator }}</p>
-    <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
-    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold','border':'2px solid black' }">Tags :{{ item.tags }}</p>
-    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
-    <ng-template #defaultImage>
-      <img [src]="defaultImageUrl" alt="Default Image" />
-    </ng-template>
-  </div>
+  <app-content-card *ngFor="let item of contentArray | contentTypeFilter:'Casual'" [item]="item">
+  </app-content-card>
 </div>
 
