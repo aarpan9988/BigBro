@@ -1,0 +1,35 @@
+<div class="content-input">
+  <label for="id">ID (Optional):</label>
+  <input type="number" id="id" [(ngModel)]="newContent.id" (blur)="checkForUpdate(newContent.id)">
+</div>
+
+<div class="content-input">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" [(ngModel)]="newContent.title" required>
+  </div>
+  <div class="content-input">
+    <label for="description">Description:</label>
+    <textarea id="description" [(ngModel)]="newContent.description" required></textarea>
+  </div>
+  <div class="content-input">
+
+    <label for="type">Type(Indian/Casual/Empty):</label>
+    <input type="text" id="type" [(ngModel)]="newContent.type" required>
+  </div>
+  <div class="content-input">
+    <label for="creator">Creator:</label>
+    <input type="text" id="creator" [(ngModel)]="newContent.creator" required>
+  </div>
+  <div class="content-input">
+    <label for="imgURL">Image URL (Optional):</label>
+    <input type="url" id="imgURL" [(ngModel)]="newContent.imgURL" required>
+  </div>
+  <div class="content-input">
+    <label for="tags">Tags (Comma-separated):</label>
+    <input type="text" id="tags" [(ngModel)]="newContent.tags">
+  </div>
+  <button type="button" class="btn btn-primary" (click)="addContent()">
+    {{ isUpdating ? 'Update Content' : 'Add Content' }}
+  </button>
+  

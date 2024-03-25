@@ -1,6 +1,6 @@
 export const contentDB=[
   { 
-    id: 1, 
+    id: null, 
     title: 'Dress', 
     description: 'Description for Content 1', 
     creator: 'Creator 1', 
